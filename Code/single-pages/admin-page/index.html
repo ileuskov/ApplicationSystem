@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Verwaltung</title>
+    <link rel="stylesheet" href="admin-page.css" />
+    <h1 class="centered">Bewerber verwalten</h1>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAcUTm6Rdr6tXJfI5Vtts51xV9ksWYsdGw",
+        authDomain: "student-39ae3.firebaseapp.com",
+        databaseURL: "https://student-39ae3.firebaseio.com",
+        projectId: "student-39ae3",
+        storageBucket: "student-39ae3.appspot.com",
+        messagingSenderId: "302068576241",
+        appId: "1:302068576241:web:23c8b02395c42751281e50",
+        measurementId: "G-2NFBDF75HZ",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"
+    ></script>
+    <script src="admin-page.js"></script>
+  </head>
+
+  <body>
+    <div class="student_data">
+      <form id="form" class="accepted">
+        <input type="text" id="userInput1" placeholder="Z.B.: 1" />
+        <button type="submit" id="accept" onclick="acceptStudents();">
+          Student Nr. zulassen
+        </button>
+      </form>
+      <form id="form" class="declined">
+        <input type="text" id="userInput2" placeholder="Z.B.: 5" />
+        <button type="submit" id="decline" onclick="rejectStudents();">
+          Student Nr. ablehnen
+        </button>
+        <div class="email">
+          <h1>Emails an die zugelassenen Studenten senden</h1>
+          <form method="post">
+            <input
+              type="button"
+              value="Send Email"
+              id="email-button"
+              onclick="sendEmail()"
+            /><br><br><br>
+            <a>Um weitere Informationen der BewerberInnen zu erhalten, klicken Sie auf die jeweilige Bewerbernummer.</a>
+          </form>
+        </div>
+      </form>
+    </div>
+    <div class="content">
+      <!-- table head -->
+      <div class="container-1 row">
+        <div class="box-1">
+          <h3 class="lightText">Student Nr.</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Vorname</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Nachname</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Email</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Telefonnummer</h3>
+        </div>
+        <!-- 
+        <div class="box-1">
+          <h3 class="lightText">Geburtstag</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Geschlecht</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Straße</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Stadt</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">PLZ</h3>
+        </div>
+
+        <div class="box-1">
+          <h3 class="lightText">Abiturnote</h3>
+        </div> -->
+
+        <div class="box-1">
+          <h3 class="lightText">Zugelassen</h3>
+        </div>
+      </div>
+      <!-- table content - listing  of students -->
+      <div class="container-2">
+        <output></output>
+      </div>
+    </div>
+
+    <div>
+      <ol id="scorelist"></ol>
+    </div>
+
+    <!-- jQuery-->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  </body>
+</html>

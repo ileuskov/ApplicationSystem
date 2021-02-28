@@ -1,0 +1,134 @@
+.container-1 {
+  display: flex;
+}
+
+.container-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-1 div,
+.container-2 div {
+  padding: 5px 0px 5px 0px;
+}
+
+.box-full {
+  flex: 1;
+  text-align: center;
+}
+
+.box-1 {
+  flex: 1;
+  text-align: center;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.box-2 {
+  flex: 2;
+  text-align: center;
+}
+
+.normalRow {
+  display: flex;
+  flex: 1;
+}
+.underlinedRow {
+  display: flex;
+  flex: 1;
+  border-bottom: 1px solid;
+  border-color: #0082c6;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  opacity: 0.7;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #32475b;
+}
+
+strong {
+  color: #32475b;
+  font-weight: bold;
+}
+
+.lightText {
+  color: #a2a2a2;
+}
+
+.content {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  border: 2px solid;
+  border-color: #32475b;
+  border-radius: 1vw;
+}
+
+.buttons {
+  text-align: right;
+  margin: 1vw;
+}
+
+.email {
+  margin: 20px 35%;
+  width: 60%;
+}
+
+.student_data {
+  margin: 25px auto;
+}
+
+.accepted {
+  margin: 10px 5px;
+}
+
+.declined {
+  margin: 10px 5px;
+}
+
+#accept {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+#decline {
+  background-color: #f10909;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+#email-button {
+  background-color: #0a5efa;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+}
